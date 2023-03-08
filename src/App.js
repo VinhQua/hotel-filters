@@ -1,25 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import Filters from './Filters/filters';
+import HotelsList from './Hotels/HotelsList';
+import React , {Component } from 'react';
+import { hotels } from './data';
 
-function App() {
+class App extends Component {
+  state={
+    filters:[],
+    hotelsArr:hotels
+  }
+  filterBy =(FilterInputs)=>{
+    this.setState({filters:FilterInputs})
+    const options = FilterInputs;
+    const filteredHotels = hotels.filter(hotel =>{
+      const isPassed = options.every(option =>hotel[option]===true)
+      if(isPassed===true){
+        return hotel
+      }
+    })
+    console.log(options)
+    console.log(filteredHotels)
+    this.setState({hotelsArr:filteredHotels})
+  }
+  render(){
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Filters filters={this.state.filters} filterBy={this.filterBy}/>
+      <HotelsList hotelsArr={this.state.hotelsArr}/>
     </div>
-  );
+  )};
 }
 
 export default App;

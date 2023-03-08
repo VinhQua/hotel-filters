@@ -1,32 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hide{
+  display: none;
+}
 .App {
+  margin: 2rem;
   text-align: center;
+  display: flex;
+  gap: 3rem;
+}
+.filter{
+  width: 20rem;
+  padding: .5rem;
+  border: .005rem solid rgb(179, 178, 178);
+  border-radius: .5rem;
+  text-align: left;
+  height: fit-content;
+}
+.option-list{
+  padding: 0;
+  list-style: none;
+  border-top: 0.1px solid rgb(192, 191, 191);
+  padding-top: .7rem;
+}
+.option{
+  margin-bottom: .3rem;
+  position: relative;
+  font-weight: 450;
+}
+.match-num{
+  position: absolute;
+  right: 0;
+  color: rgb(151, 148, 148);
+}
+.option input{
+  margin-right:.5rem ;
+}
+.hotel-list{
+  width: 50rem;
+}
+.hotel{
+  list-style: none;
+  border: .005rem solid rgb(205, 204, 204);
+  border-radius: .7rem;
+  margin-bottom: 2rem;
+  display: flex;
+  padding: .5rem;
+  position: relative;
+}
+.best-seller{
+  background-color: rgb(1, 132, 1);
+  padding:0.7rem 1rem;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  transform: translateX(-19%) translateY(-50%);
+  border-radius: .6rem;
+  box-shadow: 2px 2px 5px black;
+  perspective: 100px;
+  border-top-left-radius:0 ;
+  border-bottom-left-radius:0 ;
+
+}
+.best-seller div{
+  
+  background-color:  rgb(1, 132, 1);
+  height: 100%;
+  width: 27%;
+  left: -9px;
+  top: 20%;
+  transform: rotateY(-45deg);
+  position: absolute;
+  z-index: 1000;
+}
+.hotel h3{
+  text-align: left;
+  margin-left: 1.5rem;
+  color: rgb(85, 147, 253);
+}
+.rating{
+  background-color: rgb(7, 15, 126);
+  color: white;
+  width: fit-content;
+  padding: .5rem;
+  font-weight: 500;
+  border-radius: .5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-bottom-left-radius: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hotel-image{
+  width: 50%;
+  border-radius: .2rem;
+  border: .001rem solid grey;
 }
-
+.flex-box{
+  display: flex;
+  gap: .5rem;
+  margin-top: 1rem;
+  position: relative;
+  height: 85%;
+}
+.hotel-feature{
+  list-style: none;
+  text-align: left;
+  padding:.5rem ;
+  margin-left: 1rem;
+  width: 50%;
+}
+.hotel-feature span{
+  color: gray;
+  font-weight: 480;
+}
+.hotel-feature li{
+  color: rgb(105, 166, 14);
+  font-weight: 600;
+}
+.room-left{
+  color: red;
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.hotel-price{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  color: gray;
+  font-weight: 500;
+}
+.price{
+  color: rgb(105, 166, 14);
+  font-size: 1.5rem;
+}
+.see-room-btn{
+  padding:0.7rem 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(7, 15, 126);
+  font-size: 1rem;
+  margin-top: .5rem;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+
+
 
 @keyframes App-logo-spin {
   from {
