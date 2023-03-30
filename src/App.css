@@ -10,7 +10,9 @@
   margin: 2rem;
   text-align: center;
   display: flex;
+  justify-content: center;
   gap: 3rem;
+
 }
 .filter{
   width: 20rem;
@@ -151,8 +153,35 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
+@media (max-width:1200px) {
+  .App{
+    flex-flow: column nowrap;
+    margin: 0;
+  }
+  .filter{
+    width: 98%;
+    margin: 0 auto;
+  }
+  .hotel-list{
+    width: 98%;
+    margin: 0 auto;
+  }
+}
+@media (max-width:768px) {
+  .hotel-list{
+    width: 90%;
+  }
+  .hotel{
+    flex-flow: column;
+  }
+  .hotel h3{
+    text-align: center;
+    padding-top: .5rem;
+  }
+  .hotel-image{
+    width: 100%;
+  }
+}
 
 
 

@@ -3,14 +3,12 @@ import MatchedNumber from "./MatchedNumber";
 class FilterOption extends Component{
     chooseFilter=(e)=>{
         let filterOptions = this.props.filters;
-        //console.log(this.props.filters)
         if (e.target.checked === true){
             filterOptions.splice(0,0,this.props.id)
             console.log(this.props.id)
             console.log('true')
         }else {
             filterOptions = filterOptions.filter(option=> option !== this.props.id)
-            //console.log(filters)
         }
         console.log(filterOptions)
         return this.props.filterBy(filterOptions)
